@@ -1,0 +1,20 @@
+{
+	"name": "gender",
+	"version": "0.0.1",
+	"description": "guess the gender of a name based on U.S. census data",
+	"keywords": [
+		"gender",
+    "sex",
+    "census"
+	],
+	"author": "mopsled <throwpi@me.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeremyosborne/packagejsonexample.git"
+  },
+  "main": "gender.js",
+  "files": [
+    "census"  
+  ],
+	"license" : "MIT",
+}
