@@ -31,8 +31,11 @@ function frequencyInFile(firstName, file) {
 
 function parseFile(file) {
   frequencies = {};
-  fs = require('fs');
-  var array = fs.readFileSync(file).toString().split('\n');
+  var fs = require('fs');
+  var path = require('path');
+
+  var filePath = path.join(path.dirname(fs.realpathSync(__filename)), file);
+  var array = fs.readFileSync(filePath).toString().split('\n');
   for(i in array) {
     var parts = array[i].split(/\s+/);
     var name = parts[0];
