@@ -1,6 +1,6 @@
 {
 	"name": "gender",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "guess the gender of a name based on U.S. census data",
 	"keywords": [
 		"gender",
@@ -14,6 +14,7 @@
   },
   "main": "gender",
   "files": [
+    "gender.js",
     "census"
   ],
 	"license" : "MIT"
