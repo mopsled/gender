@@ -1,6 +1,6 @@
 {
 	"name": "gender",
-	"version": "0.0.6",
+	"version": "0.0.0",
 	"description": "guess the gender of a name based on U.S. census data",
 	"keywords": [
 		"gender",
