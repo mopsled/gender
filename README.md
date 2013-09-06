@@ -15,3 +15,7 @@ gender.guess('Mad Men')
 ```
 
 Statistical data obtained from the [US Census Bureau](http://www.census.gov/genealogy/names/names_files.html), so it works best with American names.
+
+## Installation
+
+    $ npm install gender
