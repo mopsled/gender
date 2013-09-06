@@ -10,11 +10,11 @@
 	"author": "mopsled <throwpi@me.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jeremyosborne/packagejsonexample.git"
+    "url": "https://github.com/mopsled/gender"
   },
   "main": "gender.js",
   "files": [
     "census"  
   ],
-	"license" : "MIT",
+	"license" : "MIT"
 }
