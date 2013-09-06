@@ -1,9 +1,9 @@
-exports.gender = function(fullName) {
+exports.guess = function(fullName) {
   var firstName = getFirstNameFromFullName(fullName);
   firstName = firstName.toLowerCase();
 
-  var freqMale = frequencyInFile(firstName, 'guess/male.txt');
-  var freqFemale = frequencyInFile(firstName, 'guess/female.txt');
+  var freqMale = frequencyInFile(firstName, 'gender/male.txt');
+  var freqFemale = frequencyInFile(firstName, 'gender/female.txt');
 
   var pMale = freqMale / (freqMale + freqFemale);
   var gender, confidence;

@@ -1,11 +1,11 @@
 var assert = require('assert');
 var should = require('should');
 
-describe('guess', function() {
-  var guess = require('./../guess');
+describe('gender', function() {
+  var gender = require('./../gender');
 
-  context('male name', function() {
-    var result = guess.gender('Don Draper');
+  context('guess male name', function() {
+    var result = gender.guess('Don Draper');
     it('should guess male gender', function() {
       result['gender'].should.equal('male');
     });
@@ -14,8 +14,8 @@ describe('guess', function() {
     });
   });
 
-  context('female name', function() {
-    var result = guess.gender('Betty Draper');
+  context('guess female name', function() {
+    var result = gender.guess('Betty Draper');
     it('should guess female gender', function() {
       result['gender'].should.equal('female');
     });
@@ -24,8 +24,8 @@ describe('guess', function() {
     });
   });
 
-  context('unknown name', function() {
-    var result = guess.gender('Mad Men');
+  context('guess unknown name', function() {
+    var result = gender.guess('Mad Men');
     it('should have unknown gender', function() {
       result['gender'].should.equal('unknown');
     });
@@ -34,8 +34,8 @@ describe('guess', function() {
     });
     });
 
-  context('empty name', function() {
-    var result = guess.gender('');
+  context('guess empty name', function() {
+    var result = gender.guess('');
     it('should have unknown gender', function() {
       result['gender'].should.equal('unknown');
     });
@@ -44,8 +44,8 @@ describe('guess', function() {
     });
     });
 
-  context('last name, first name', function() {
-    var result = guess.gender('Harris, Joan');
+  context('guess last name, first name', function() {
+    var result = gender.guess('Harris, Joan');
     it('should guess female gender', function() {
       result['gender'].should.equal('female');
     });
