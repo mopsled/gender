@@ -20,14 +20,8 @@ exports.guess = function(fullName) {
   return {gender: gender, confidence: confidence};
 }
 
-var parsedFiles = {};
 function frequencyInFile(firstName, file) {
-  if (file in parsedFiles) {
-    frequencies = parsedFiles[file];
-  } else {
-    frequencies = parseFile(file);
-    parsedFiles[file] = frequencies;
-  }
+  frequencies = parseFile(file);
   
   if (frequencies[firstName] == undefined) {
     return 0.0005;
@@ -37,6 +31,10 @@ function frequencyInFile(firstName, file) {
 }
 
 function parseFile(file) {
+  if (file in parseFile.cache) {
+    return parseFile.cache[file];
+  }
+
   frequencies = {};
   var fs = require('fs');
   var path = require('path');
@@ -49,8 +47,11 @@ function parseFile(file) {
     var frequency = parts[1];
     frequencies[name.toLowerCase()] = parseFloat(frequency);
   }
+  parseFile.cache[file] = frequencies;
   return frequencies;
 }
+
+parseFile.cache = {};
 
 function getFirstNameFromFullName(fullName) {
   var commaIndex = fullName.indexOf(',');
