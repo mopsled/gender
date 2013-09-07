@@ -1,6 +1,6 @@
 exports.guess = function(fullName) {
   var firstName = getFirstNameFromFullName(fullName);
-  firstName = firstName.toLowerCase();
+  firstName = firstName.toLowerCase(); 
 
   var freqMale = frequencyInFile(firstName, 'census/male.txt');
   var freqFemale = frequencyInFile(firstName, 'census/female.txt');
@@ -20,8 +20,15 @@ exports.guess = function(fullName) {
   return {gender: gender, confidence: confidence};
 }
 
+var parsedFiles = {};
 function frequencyInFile(firstName, file) {
-  frequencies = parseFile(file);
+  if (file in parsedFiles) {
+    frequencies = parsedFiles[file];
+  } else {
+    frequencies = parseFile(file);
+    parsedFiles[file] = frequencies;
+  }
+  
   if (frequencies[firstName] == undefined) {
     return 0.0005;
   } else {
