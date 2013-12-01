@@ -1,5 +1,7 @@
 # Gender
 
+Originally forked from [ankane's guess repository (in ruby)](https://github.com/ankane/guess).
+
 *Statistically* determine a person's gender based on his / her name.
 
 ```javascript
